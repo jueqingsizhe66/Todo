@@ -63,9 +63,11 @@ t view nodate等。
 ![result][15]
 
 ```
-https://raw.githubusercontent.com/jueqingsizhe66可以访问本地图片 有用！
-改为： https://raw.github.com/jueqingsizhe66可以访问本地图片 有用！
-github内部机制
+https://raw.githubusercontent.com/jueqingsizhe66尝试访问本地图片 没用！
+改为： https://raw.github.com/jueqingsizhe66尝试访问本地图片 有用！
+github内部机制,似乎无效
+https://github.com/jueqingsizhe66/Todo/blob/master/finalResult2.png
+有效了
 ```
 
     + [t xp][9]
