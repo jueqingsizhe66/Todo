@@ -1,5 +1,31 @@
-(A) due:2017-05-02  @home do some job
-due:2017-05-02 +java @work testJava
-(B) due:2017-05-03 hw
-due:2017-05-09 @work +vim test1
-(C) due:2017-06-01 one work
+(A) due:2017.05.02  @home do some job
+due:2017.05.02 +java @work testJava
+(B) due:2017.05.03 hw
+due:2017.05.09 @work +vim test1
+(C) due:2017.06.01 one work
+mit add tuesday add @work +time go to
+t:2017-05-02 {2017.05.02}
+t:{2017-05-02} send xinran
+(A) {2017.10.00} finish paper @F708 +mulAxis
+{2017.Q2.00} increase your profit
+{2017.05.05} go to shopping @meilian +multi
+@phone Daddy
+{2018.00.00} @beijing +life make wedding with XinRan
+(A) {2017.05.04}  @F708 +multiAxis finish drawing dyanmic inflow mesh 
+(A) {2017.05.07}  @F708 +multiAxis finish drawing nacelle yawing mesh
+(B) {2017.05.08} @FengTai +life install clean water machine and take high pressure pat
+(E) {2017.05.03} @F708 +graduate call WangNanMan to do report
+@phone Xinran
+(B) {2017.05.16} @F708 +multiAxis Learn and use CaD to draw your design picture
+(B) {2017.06.02} @F708 +multiAxis Learn UG to utilize the UG8.0 folders By LiXinkai
+{2019.00.00} @beijing +graduate Finish four papers required by NCEPU
+{2017.Q2.00} @F708 +multiAxis do summary for the yaw wind turbine
+{2017.Q3.00} @F708 +multiAxis do some fortran tests for the FVM with FAST for dynamic pitch
+{2019.00.00} @beijing +graduate writing the graduate thesis for my Doctor major in fluid mechanic
+{2020.00.00} @beijing +work search my job about the wind turbine or some coding work
+{2017.05.09} @F708
+{2017.06.00} @F708 +multiAxis writing the yaw report for Mr Kang with dedicately
+{2017.05.23} @F708 +graduate inform WangNanMan to submit the undergraduate thesis
+{2017.05.04} @F708 +graduate talk with WangNanMan to add an interface to my Project
+{2017.00.00} @F708 +multiAxis finish the CFD simultion with paper result and do some coding about FVM
+{2017.05.04} @Subway +multiAxis read the paper about the wind turbine yaw
