@@ -120,7 +120,7 @@ if __name__ == '__main__':
 ```
 
 
-3. [Todo.txt vim plugin][]
+3. [Todo.txt vim plugin][4]
 
 ``` vim
 Sorting tasks:
