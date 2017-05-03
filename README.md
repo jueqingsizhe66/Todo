@@ -6,25 +6,26 @@
 ### [Todo.txt add on][3]
 cygwin制作linux环境，需要把bash文件dos2unix.exe转换文件，否则出现故障。
 
-    + [t graph][5] 
-    + [t mit][6]
++ [t graph][5] 
++ [t mit][6]
        t mit 日期 任务信息：日期包含着具体的日子[today,mon,tue,wed,thr,fri,sat,2017.05.05]、月份[jan,feb]、季度[q1,q2,q3,q4]、年[2017,2018]等信息
        【日度】 【月度】  【季度】 【年度】计划的指定工具
        t mit 可以查看【四度】计划表，相当于计划汇总表
        t mit @f708 显示所有地点在f708的计划表，四度都会显示出来，但是速度慢一些
        t mit not @f708  显示不在f708的计划表[可惜的是，还无法支持地点分层]
        t mit rm和t mit mv类似于 t rm和t mv.
-    + [t mitf 1d][7]
++ [t mitf 1d][7]
        带时间段的定义task
        t mitf 1w "@f708 +multiAxis ..."
        t mitf 1m "@f708 +multiAxis ..."
        t mitf 1d "@f708 +multiAxis ..."
-    + [t top   t view  t edit][8]
++ [t top   t view  t edit][8]
        top显示头20天信息。
 
        view比较好用
        一般用t view project 显示【项目分层】的计划表，t view context显示【地点相关分层】的计划表，由于时间相关的
-       任务得在每条任务中添加t:2017-05-03的标签，所以t view date,t view today ,t view tomorrow,t view future,t view past等时间相关的任务在任务中没有t:开头的时间标签都认为是无效，得手动进行添加了,This is shortage,希望改进。
+       任务得在每条任务中添加t:2017-05-03的标签，所以t view date,t view today ,t view tomorrow,t view future,
+       t view past等时间相关的任务在任务中没有t:开头的时间标签都认为是无效，得手动进行添加了,This is shortage,希望改进。
 
        为此改进如下：只要添加t:2017-05-03日期规范即可，于是写了如下【简单】脚本【简单又复杂2h】【注意dos2unix.exe】
 ``` sh
@@ -88,6 +89,7 @@ https://github.com/jueqingsizhe66/Todo/blob/master/finalResult2.png
 
 <hr/>
 <hr/>
+
 + [t due][13]
 
 修改了due.py,配合上mit的时间格式.
