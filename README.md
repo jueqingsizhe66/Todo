@@ -64,6 +64,8 @@ t view nodate等。
 
 ```
 https://raw.githubusercontent.com/jueqingsizhe66可以访问本地图片 有用！
+改为： https://raw.github.com/jueqingsizhe66可以访问本地图片 有用！
+github内部机制
 ```
 
     + [t xp][9]
@@ -277,5 +279,5 @@ $ t prep 1 fuck
 [11]:https://github.com/ginatrapani/todo.txt-cli/wiki/Todo.sh-Add-on-Directory#sync-sync-state-between-local-and-remote-git-repository 
 [12]: https://raw.githubusercontent.com/fnd/todo.txt-cli/extensions/commit
 [13]:https://github.com/rebeccamorgan/due 
-[14]:https://raw.githubusercontent.com/jueqingsizhe66/Todo/finalresult.png
-[15]:https://raw.githubusercontent.com/jueqingsizhe66/Todo/finalresult2.png
+[14]:https://raw.github.com/jueqingsizhe66/Todo/finalresult.png
+[15]:https://raw.github.com/jueqingsizhe66/Todo/finalresult2.png
