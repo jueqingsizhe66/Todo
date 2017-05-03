@@ -1,9 +1,9 @@
 ## Use Todo.txt to manage your life job
 
-1. [Todo.txt][1]
-支持多种编程语言的开发
+### [Todo.txt][1]
+开源的计划管理工具，支持多种编程语言的开发
 
-2. [Todo.txt add on][3]
+### [Todo.txt add on][3]
 cygwin制作linux环境，需要把bash文件dos2unix.exe转换文件，否则出现故障。
 
     + [t graph][5] 
@@ -70,17 +70,28 @@ https://github.com/jueqingsizhe66/Todo/blob/master/finalResult2.png
 有效了
 ```
 
-    + [t xp][9]
+<hr/>
+<hr/>
+
++ [t xp][9]
        更好显示【已完成】任务
        t xp -o 10 
        显示10天内完成的任务
-    + [t birdseye][10]
+
++ [t birdseye][10]
         t birdseye: 生成产量报告,完成量和未完成量的统计
         A Python script birdseye.py (called with the birdseye action) analyzes the todo.txt and done.txt files to generate a report of completed and incomplete items in every context and project. (Requires Python and both birdseye.py and birdseye files to run.)
-    + [t sync][11]
+
++ [t sync][11]
+
 同步，需要[t commit][12],算了不用这个了,手动提交。
-    + [t due][13]
+
+<hr/>
+<hr/>
++ [t due][13]
+
 修改了due.py,配合上mit的时间格式.
+
 ``` python
 #!/usr/bin/env python
 """
@@ -178,8 +189,13 @@ if __name__ == '__main__':
 
 ```
 
+<hr/>
+<hr/>
 
-3. [Todo.txt vim plugin][4]
+
+### [Todo.txt vim plugin][4]
+
+用vim来修改你的todo.txt文件，挺方便的,通过bundle安装一下，不需要再.vimrc修改其他东西。
 
 ``` vim
 Sorting tasks:
@@ -206,10 +222,10 @@ Mark as done:
  <localleader>D  Move completed tasks to done.txt
 
 ```
-4. [The video about Todo.txt][2]
+### [The video about Todo.txt][2]
 
 
-5. todo原始命令的使用
+### todo原始命令的使用
 
 **注意事先得对t进行alias，并执行todo的命令补全功能shell,具体官网看说明**
 
