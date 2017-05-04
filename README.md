@@ -6,6 +6,10 @@
 ### [Todo.txt add on][3]
 cygwin制作linux环境，需要把bash文件dos2unix.exe转换文件，否则出现故障。
 
+[安装插件方法][16]
+
+可以参考我的[todo add on 仓库][20]
+
 + [t graph][5] 
 + [t mit][6]
        t mit 日期 任务信息：日期包含着具体的日子[today,mon,tue,wed,thr,fri,sat,2017.05.05]、月份[jan,feb]、季度[q1,q2,q3,q4]、年[2017,2018]等信息
@@ -28,6 +32,11 @@ cygwin制作linux环境，需要把bash文件dos2unix.exe转换文件，否则�
        t view past等时间相关的任务在任务中没有t:开头的时间标签都认为是无效，得手动进行添加了,This is shortage,希望改进。
 
        为此改进如下：只要添加t:2017-05-03日期规范即可，于是写了如下【简单】脚本【简单又复杂2h】【注意dos2unix.exe】
+
+【addView.sh】用于t view date和t due，经过这个修改【t due只需要修改due.py的due为t和4改为2，想看t due插件】即可, t again也是用着类似于t due的思路，也得对应修改due 为t。
+
+【addView.sh和deletView.sh】都是用于【修改todo.txt】的小工具。
+
 ``` sh
 #count=1;
 for quartern in `grep -no "[^ :]*{[^ ]\+}" todo.txt|tr "." "-"|awk -F"[{-}]" '{printf("%s%s\n",$1,$2)}'`;do 
@@ -54,7 +63,8 @@ done
 + 获取时间，并进行特殊日期处理，比如年、季度、月份的处理
 + 最后调用todo.sh append即可，刚好在对应任务插入一行字符串，perfect解决
 
-因为重复上述脚本，会不断增加t:日期，于是又写了一个【删除】脚本
+因为重复上述脚本，会不断增加t:日期，于是又写了一个【删除】脚本【保存为deleteView.sh】
+
 ``` sh
 sed -ie "s/t:.*$//g" todo.txt
 ```
@@ -87,11 +97,142 @@ https://github.com/jueqingsizhe66/Todo/blob/master/finalResult2.png
 
 同步，需要[t commit][12],算了不用这个了,手动提交。
 
++ [t revive][17]
+
+t revive查找done.txt,然后显示出来完成的任务，t revive #item表示完成done.txt的记录号，一把就是行号。
+但是这个不会修改日期，只是删除x+日期而已。
+
+但是自从有了again插件之后，发现这个插件有点鸡肋。
+
+```
+$ t revive
+1 x 2017-05-02 due:2017-05-01 @f708 +graduate info the Huang to check the report
+2 x 2017-05-02 due:2017-05-02 @jpw +jr dpme
+3 x 2017-05-03 {2017.05.03} @F708 +graduate call WangNanMan to do report
+5 x 2017-05-04 {2017.05.04} @f708 +graduate talk with WangNanMan to add an interface to my Project  t:2017-05-04
+4 x 2017-05-04 {2017.05.04} @Subway +multiAxis read the paper about the wind turbine yaw  t:2017-05-04
+6 x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+--
+DONE: 6 of 6 tasks shown
+
+$ t revive 6
+26 {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+TODO: 26 added.
+
+
+```
+
++ [t again][18]
+
+完成某个任务，并且重复再做，或者推迟几天再做。
+
+为了配合上mit又得类似于due插件做一个小调整，把due tag换成t tag
+一般得配合上t view today或者t list 亦或者t due 3 ,t due 1等使用
+
+```
+# Replace any due date (due:DATE) of the item in $LINE by $ADJUST
+function replace_due_date()
+{
+  #TAG=due
+  TAG=t
+  replace_tagged_date
+}
+
+```
+
+测试例子
+
+```
+$ t again 26 +1
+26 x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+TODO: 26 marked as done.
+x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+TODO: /cygdrive/d/Todo/todo.txt_cli-2.9/todo.txt archived.
+26 {2017.05.04} tr
+```
+
+<font color="red">注意:</font>
+
++ t again 26 1表示增加一天的期限【这个命令我经常会用，开心，拖上一天再干】
++ t again 26 +1 表示增加2天的期限
++ t again 26 +2 表示增加3天的期限，依次类推
+
+
+
+官网的例子：
+
+```
+$ date +%F
+2015-11-12
+
+$ todo.sh list
+1 learn something new
+2 change bathroom towels due:2015-11-15
+3 deposit paycheck due:2015-11-15
+4 replace smoke alarm batteries due:2015-10-20
+5 pay rent due:2015-12-03
+6 send flowers to Mom for her birthday due:2016-01-14 again:+1y
+
+$ todo.sh again 1
+1 x 2015-11-12 learn something new
+TODO: 1 marked as done.
+7 learn something new
+TODO: 7 added.
+
+$ todo.sh again 2 14
+2 x 2015-11-12 change bathroom towels due:2015-11-15
+TODO: 2 marked as done.
+8 change bathroom towels due:2015-11-26
+TODO: 8 added.
+
+$ todo.sh again 3 +14
+3 x 2015-11-12 deposit paycheck due:2015-11-15
+TODO: 3 marked as done.
+9 deposit paycheck due:2015-11-29
+TODO: 9 added.
+
+$ todo.sh again 4 1y
+4 x 2015-11-12 replace smoke alarm batteries due:2015-10-20
+TODO: 4 marked as done.
+10 replace smoke alarm batteries due:2016-11-12
+TODO: 10 added.
+
+$ todo.sh again 5 +1m
+5 x 2015-11-12 pay rent due:2015-12-03
+TODO: 5 marked as done.
+11 pay rent due:2016-01-03
+TODO: 11 added.
+
+$ todo.sh again 6
+6 x 2015-11-12 send flowers to Mom for her birthday due:2016-01-14 again:+1y
+TODO: 6 marked as done.
+12 send flowers to Mom for her birthday due:2017-01-14 again:+1y
+TODO: 12 added.
+```
+
+[again插件调整天  星期  月 年的高级命令][19]
 <hr/>
 <hr/>
 
 + [t due][13]
 
+【注意：】 关于due.py的时间格式的修改可以忽略下文，只需要修改due.py的re.search的due改为t,并且把针对于due的4改为2即可。
+```
+        for i, task in enumerate(content):
+            #match = re.search(r'due:\d{4}-\d{2}-\d{2}', task)
+            match = re.search(r't:\d{4}-\d{2}-\d{2}', task)
+
+            if match is not None:
+                #date = datetime.strptime(match.group()[4:], '%Y-%m-%d').date()
+                date = datetime.strptime(match.group()[2:], '%Y-%m-%d').date()
+
+
+
+```
+
+<hr/>
+<hr/>
+<hr/>
 修改了due.py,配合上mit的时间格式.
 
 ``` python
@@ -191,6 +332,7 @@ if __name__ == '__main__':
 
 ```
 
+<hr/>
 <hr/>
 <hr/>
 
@@ -301,4 +443,8 @@ $ t prep 1 fuck
 [13]:https://github.com/rebeccamorgan/due 
 [14]:https://github.com/jueqingsizhe66/Todo/blob/master/finalResult.png
 [15]:https://github.com/jueqingsizhe66/Todo/blob/master/finalResult2.png
-
+[16]:https://github.com/ginatrapani/todo.txt-cli/wiki/Creating-and-Installing-Add-ons#installing-add-ons 
+[17]:https://github.com/duncanje/todo.txt-revive 
+[18]:https://github.com/nthorne/todo.txt-cli-again-addon 
+[19]:https://github.com/nthorne/todo.txt-cli-again-addon#adjustment-format 
+[20]:https://github.com/jueqingsizhe66/TodoPlugins/tree/develop  

@@ -1,25 +1,27 @@
-fuck due:2017.05.02  @home do some job fuck 
-(A) {2017.10.00} finish paper @f708 +mulAxis  t:2017-10-01
-{2017.Q2.00} increase your profit  t:2017-04-01
-{2017.05.05} go to shopping @meilian +multi  t:2017-05-05
+(A) {2017.10.00} finish paper @f708 +mulAxis    t:2017-10-01
+{2017.Q2.00} increase your profit    t:2017-04-01
+{2017.05.05} go to shopping @meilian +multi    t:2017-05-05
 @phone Daddy 
-{2018.00.00} @beijing +life make wedding with XinRan  t:2018-01-01
-(A) {2017.05.04}  @f708 +multiAxis finish drawing dyanmic inflow mesh   t:2017-05-04
-(A) {2017.05.07}  @f708 +multiAxis finish drawing nacelle yawing mesh  t:2017-05-07
-(B) {2017.05.08} @FengTai +life install clean water machine and take high pressure pat  t:2017-05-08
+{2018.00.00} @beijing +life make wedding with XinRan    t:2018-01-01
+(A) {2017.05.04}  @f708 +multiAxis finish drawing dyanmic inflow mesh     t:2017-05-04
+(A) {2017.05.07}  @f708 +multiAxis finish drawing nacelle yawing mesh    t:2017-05-07
+(B) {2017.05.08} @FengTai +life install clean water machine and take high pressure pat    t:2017-05-08
 @phone Xinran 
-(B) {2017.05.16} @f708 +multiAxis Learn and use CaD to draw your design picture  t:2017-05-16
-(B) {2017.06.02} @f708 +multiAxis Learn UG to utilize the UG8.0 folders By LiXinkai  t:2017-06-02
-{2019.00.00} @beijing +graduate Finish four papers required by NCEPU  t:2019-01-01
-{2017.Q2.00} @f708 +multiAxis do summary for the yaw wind turbine  t:2017-04-01
-{2017.Q3.00} @f708 +multiAxis do some fortran tests for the FVM with FAST for dynamic pitch  t:2017-07-01
-{2019.00.00} @beijing +graduate writing the graduate thesis for my Doctor major in fluid mechanic  t:2019-01-01
-(B) {2020.00.00} @beijing +work search my job about the wind turbine or some coding work  t:2020-01-01
-{2017.06.00} @f708 +multiAxis writing the yaw report for Mr Kang with dedicately  t:2017-06-01
-{2017.05.23} @f708 +graduate inform WangNanMan to submit the undergraduate thesis  t:2017-05-23
-{2017.05.04} @f708 +graduate talk with WangNanMan to add an interface to my Project  t:2017-05-04
-{2017.00.00} @f708 +multiAxis finish the CFD simultion with paper result and do some coding about FVM  t:2017-01-01
-{2017.05.04} @Subway +multiAxis read the paper about the wind turbine yaw  t:2017-05-04
-{2017.06.03} @f708 +multiAxis Learn to use PROE  t:2017-06-03
-{2017.05.00} @f708 +multiAxis Practice writing the yawing paper about WT and do some java source coding ,deep learning maven and springboot project ,and also keetle  t:2017-05-01
-{2017.05.05} @f708 +multiAxis accelerate the post matlab code 
+(B) {2017.05.16} @f708 +multiAxis Learn and use CaD to draw your design picture    t:2017-05-16
+(B) {2017.06.02} @f708 +multiAxis Learn UG to utilize the UG8.0 folders By LiXinkai    t:2017-06-02
+{2019.00.00} @beijing +graduate Finish four papers required by NCEPU    t:2019-01-01
+{2017.Q2.00} @f708 +multiAxis do summary for the yaw wind turbine    t:2017-04-01
+{2017.Q3.00} @f708 +multiAxis do some fortran tests for the FVM with FAST for dynamic pitch    t:2017-07-01
+{2019.00.00} @beijing +graduate writing the graduate thesis for my Doctor major in fluid mechanic    t:2019-01-01
+(B) {2020.00.00} @beijing +work search my job about the wind turbine or some coding work    t:2020-01-01
+{2017.06.00} @f708 +multiAxis writing the yaw report for Mr Kang with dedicately    t:2017-06-01
+{2017.05.23} @f708 +graduate inform WangNanMan to submit the undergraduate thesis    t:2017-05-23
+{2017.00.00} @f708 +multiAxis finish the CFD simultion with paper result and do some coding about FVM    t:2017-01-01
+{2017.06.03} @f708 +multiAxis Learn to use PROE    t:2017-06-03
+{2017.05.00} @f708 +multiAxis Practice writing the yawing paper about WT and do some java source coding ,deep learning maven and springboot project ,and also keetle    t:2017-05-01
+{2017.05.05} @f708 +multiAxis accelerate the post matlab code    t:2017-05-05
+{2017.06.00} @f708 +java learn to use beetl and beetlsql template engine  t:2017-06-01
+{2017.07.00} @f708 +java practive springboot and hutool also feilong-core  t:2017-07-01
+{2017.08.00} @f708 +java practive t-io im etc  t:2017-08-01
+x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab  t:2017-05-04
+{2017.05.11} tell WangNanman to do report for Mr. Wang @f812 +graduate t:2017-05-11
