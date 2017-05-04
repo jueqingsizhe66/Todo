@@ -68,6 +68,14 @@ done
 ``` sh
 sed -ie "s/t:.*$//g" todo.txt
 ```
+
+注意得修改deleteView.sh,用于配套t note套件。
+
+``` sh
+sed -ie 's/t:.*\s*//g' todo.txt
+
+```
+
 删除todo.txt目录下的该文件， 从t:开始到行尾都删除掉。增删就都完成了，这样就可以使用t view date, t view tomorrow, t view today , t view past ,t view future,
 t view nodate等。
 ![todo][14]
@@ -103,6 +111,10 @@ t revive查找done.txt,然后显示出来完成的任务，t revive #item表示�
 但是这个不会修改日期，只是删除x+日期而已。
 
 但是自从有了again插件之后，发现这个插件有点鸡肋。
+但是突然想到了一个思路，有时候你会想着恢复done.txt，这样你就可以配合上addView,这样修改的日期就会不断的朝前，
+并且也不会说不断的增加done的数据，只保留最新的一个版本。maybe a little complex.
+但是，后来我查了一下，t revive并不会删掉done的数据。
+
 
 ```
 $ t revive
@@ -214,6 +226,72 @@ TODO: 12 added.
 <hr/>
 <hr/>
 
++ [t chcon][21]
+
+特别小的插件，用于调整context 计划的地点，类似的思路调整项目，但是一般没有必要。
+
++ [t note][22]
+
+除非真的想要添加笔记，一般我是不太原因添加的，t again , t mit, t due, t lately, t view用的好好的，不整这么复杂的。
+
+1. 【add】约定是在每个任务后面加上一个note:任意文件名.md 该文件名存储在todo.txt文件的目录下.
+按照原理每个任务如果添上note会有一个文件名，通过名字对应。
+2. 【done】另外当一个task完成后，会创建一个archive*.md文件，也就是在done.txt的时候，查看只能通过t note show a #item
+或者t note edit a #item ;a代表着archive的意思
+3. 【delete】理论上删除一个task，也会删除对应的note.md
+
+注意得修改deleteView.sh:
+
+``` sh
+sed -ie 's/t:.*\s*//g' todo.txt
+
+```
+需要额外在todo.cfg配置全局环境
+
+```
+# for the note
+# Note file extension
+export TODO_NOTE_EXT=.md
+export EDITOR=vim
+
+```
+
+安装说明：
+```
+Installation
+
+Copy the archive, del and rm files in this directory to your add-ons folder. Be aware that this add-on overrides the archive, del and rm commands. If you already have overriden some of them, you'll need to do some tweaking to combine both versions.
+```
+
+得替换掉默认的t archive生成一个bak文件，和t rm和t del,否则无法配合done的时候，完成笔记的关联关系。
+目的是构成一个笔记系统。
+这样，如果完成一个done之后，就会删掉对应的*.md文件【已确认，的确是删除了】，并存放到archive.md文件，可以通过t note a 查看archive.md的日记信息。
+
+
+就这样构成了，添加note，note和待完成计划的关系，以及计划完成之后，依然保留note的方式(也就是archive.md中)。
+【note简易系统】
+
+
+官网简单使用说明,一般都是配合上t ls,t view today ,t due ,t due 3等使用
+
+```
+$ t note add 27
+27 {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04 note:gby.md
+TODO: Note added to task 27.
+Edit note?  (y/n)
+y
+
+$ t note show 27
+test it# {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+
+$ t note show a
+test it# {2017.05.04} transact a check for the DELL @NCEPU +lab t:2017-05-04
+
+
+
+```
+
+
 + [t due][13]
 
 【注意：】 关于due.py的时间格式的修改可以忽略下文，只需要修改due.py的re.search的due改为t,并且把针对于due的4改为2即可。
@@ -234,6 +312,7 @@ TODO: 12 added.
 <hr/>
 <hr/>
 修改了due.py,配合上mit的时间格式.
+<font color="red">code part ignored</font>
 
 ``` python
 #!/usr/bin/env python
@@ -334,6 +413,7 @@ if __name__ == '__main__':
 
 <hr/>
 <hr/>
+
 <hr/>
 
 
@@ -448,3 +528,5 @@ $ t prep 1 fuck
 [18]:https://github.com/nthorne/todo.txt-cli-again-addon 
 [19]:https://github.com/nthorne/todo.txt-cli-again-addon#adjustment-format 
 [20]:https://github.com/jueqingsizhe66/TodoPlugins/tree/develop  
+[21]:https://github.com/kunkku/todo.txt-cli-chcon 
+[22]:https://github.com/mgarrido/todo.txt-cli/tree/note/todo.actions.d 

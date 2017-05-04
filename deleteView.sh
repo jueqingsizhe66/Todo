@@ -1,1 +1,1 @@
-sed -ie 's/t:.*$//g' todo.txt
+sed -ie 's/t:.*\s*//g' todo.txt

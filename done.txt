@@ -3,4 +3,5 @@ x 2017-05-02 due:2017-05-02 @jpw +jr dpme
 x 2017-05-03 {2017.05.03} @F708 +graduate call WangNanMan to do report
 x 2017-05-04 {2017.05.04} @Subway +multiAxis read the paper about the wind turbine yaw  t:2017-05-04
 x 2017-05-04 {2017.05.04} @f708 +graduate talk with WangNanMan to add an interface to my Project  t:2017-05-04
-x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab  t:2017-05-04
+x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab   t:2017-05-05 note:gby.md
+x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab   t:2017-05-05 note:gby.md
