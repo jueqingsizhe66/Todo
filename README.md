@@ -507,6 +507,56 @@ $ t prep 1 fuck
 ```
 相反地，t append 1 "fuck" 或者t app 1 fuck表示在任务1的末尾添加fuck字段。
 
+### .bashrc的相应配置
+
+核心的功能就是<font color="red">【**todo.sh**】</font>
+``` sh
+#one thing: load todo.txt-cli
+PATH=$PATH:"/cygdrive/d/Todo/todo.txt_cli-2.9"
+alias t='todo.sh -d /cygdrive/d/Todo/todo.txt_cli-2.9/todo.cfg'
+export TODOTXT_DEFAULT_ACTION=ls
+
+#2nd thing: todo completion
+source /cygdrive/d/Todo/todo.txt_cli-2.9/todo_completion
+complete -F _todo t
+
+#3rd thing: mit completion
+source /cygdrive/d/Todo/todo.txt_cli-2.9/todo2.sh
+complete -F _todotxtcli t
+
+alias cdtodo='cd /cygdrive/d/Todo/todo.txt_cli-2.9'
+
+```
+
+todo2.sh参考[Mit][6]
+``` sh
+# todo-txt completion
+_todotxtcli() {
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  local pre="${COMP_WORDS[COMP_CWORD-1]}"
+  local cst="${COMP_WORDS[COMP_CWORD-2]}_${COMP_WORDS[COMP_CWORD-1]}"
+#  echo "start--->"
+#  echo $cur
+#  echo $pre
+#  echo $cst
+#  echo "end-->"
+  case $pre in
+    mit )
+      COMPREPLY=( $(compgen -W "today tomorrow monday tuesday wednesday thursday friday saturday sunday january february march april may june july august september october november december" -- $cur) )
+      ;;
+    * )
+      if [[ $cst =~ ^mv_[0-9]+$ ]]; then
+        COMPREPLY=( $(compgen -W "today tomorrow monday tuesday wednesday thursday friday saturday sunday january february march april may june july august september october november december" -- $cur) )
+      else
+        COMPREPLY=( $(compgen -W "mit `eval todo.sh lsprj` `eval todo.sh lsc`" -- $cur) )
+      fi
+      ;;
+  esac
+#  echo $COMPREPLY
+}
+complete -F _todotxtcli t
+
+```
 
 [1]:https://github.com/ginatrapani/todo.txt-cli 
 [2]:https://vimeo.com/3263629 
