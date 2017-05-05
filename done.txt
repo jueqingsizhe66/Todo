@@ -5,3 +5,4 @@ x 2017-05-04 {2017.05.04} @Subway +multiAxis read the paper about the wind turbi
 x 2017-05-04 {2017.05.04} @f708 +graduate talk with WangNanMan to add an interface to my Project  t:2017-05-04
 x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab   t:2017-05-05 note:gby.md
 x 2017-05-04 {2017.05.04} transact a check for the DELL @NCEPU +lab   t:2017-05-05 note:gby.md
+x 2017-05-05 {2017.05.04} transact a check for the DELL @NCEPU +lab   t:2017-05-05 note:gby.md
