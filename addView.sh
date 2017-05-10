@@ -7,7 +7,7 @@ for quartern in `grep -no "[^ :]*{[^ ]\+}" todo.txt|tr "." "-"|awk -F"[{-}]" '{p
     sed 's/\(.*\)[qQ]2-00/\106-29/'|
     sed 's/\(.*\)[qQ]3-00/\109-29/'|
     sed 's/\(.*\)[qQ]4-00/\112-29/'|
-    awk -F"-" '{if($3==00) printf("%s%s%s%s%s\n","t:",$1,"-",$2,"-01"); else printf("%s%s%s%s%s%s\n","t:",$1,"-",$2,"-",$3)}'`
+    awk -F"-" '{if($3==00) printf("%s%s%s%s%s\n","t:",$1,"-",$2,"-28"); else printf("%s%s%s%s%s%s\n","t:",$1,"-",$2,"-",$3)}'`
 #    echo ${item}
 #    echo $date1
     todo.sh append ${item} $date1
