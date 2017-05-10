@@ -57,6 +57,17 @@ for quartern in `grep -no "[^ :]*{[^ ]\+}" todo.txt|tr "." "-"|awk -F"[{-}]" '{p
 
 done
 ```
+
+修正到期日子，这样配合t due ,t view date,t again更好一些。
+
+```
+    date1=`echo $quarter|sed 's/\(.*\)00-00/\101-01/'|
+    sed 's/\(.*\)[qQ]1-00/\101-01/'|
+    sed 's/\(.*\)[qQ]2-00/\104-01/'|
+    sed 's/\(.*\)[qQ]3-00/\107-01/'|
+    sed 's/\(.*\)[qQ]4-00/\110-01/'|
+
+```
 【思路】：
 + 抓取todo.txt的行号和时间信息，目标结合mit的时间，所以是大括号里头的时间，得到对应行号和时间信息
 + 获取行号，可以提供给todo.sh append中的$item选项，即计划好 ，对应todo.txt的行号
