@@ -1,2 +1,8 @@
 *.swp
 *.*~
+*.txt
+*.sh
+!todo.txt
+!done.txt
+!report.txt
+!README.txt

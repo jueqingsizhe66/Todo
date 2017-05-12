@@ -466,6 +466,60 @@ _todotxtcli() {
 }
 complete -F _todotxtcli t
 
+
+```
+
+## ubuntu
+
+ack2.18的安装 ： [https://beyondgrep.com/install/][25]
+apt-get install ack-grep 默认安装的是2.14
+
+``` bash
+curl https://beyondgrep.com/ack-2.18-single-file > /usr/bin/ack && chmod 0777 usr/bin/ack 
+```
+
+安装玩之后 ack.vim插件才会显示:Ack命令出来！！！
+
+现在继续改进：添加ag，让ack速度翻倍
+[https://github.com/ggreer/the_silver_searcher][24]
+
+ubuntu:
+
+注意是silversearcherer-ag而不是silversearcher-ag
+```
+apt-get install silversearcher-ag
+```
+
+
+### 比较ack and ag
+```
+  master U:295  ❲r❳ ruby-2.3.3  /MyBashWork                                                                                      17:31:14  root 
+❯ time ack 'Ye Zhaoliang' ./
+
+
+real	0m0.588s
+user	0m0.516s
+sys	0m0.072s
+
+  master U:295  ❲r❳ ruby-2.3.3  /MyBashWork                                                                                      17:31:14  root 
+❯ time ag 'Ye Zhaoliang' ./
+
+real	0m0.062s
+user	0m0.052s
+sys	0m0.092s
+
+
+```
+我草！！ 快这么多
+
+### vim中采用ag
+
+
+```
+if executable('ag')
+  "let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag'
+endif
 ```
 
 [1]:https://github.com/ginatrapani/todo.txt-cli 
@@ -491,3 +545,5 @@ complete -F _todotxtcli t
 [21]:https://github.com/kunkku/todo.txt-cli-chcon 
 [22]:https://github.com/mgarrido/todo.txt-cli/tree/note/todo.actions.d 
 [23]:https://github.com/ginatrapani/todo.txt-cli/blob/master/todo.sh 
+[24]:https://github.com/ggreer/the_silver_searcher 
+[25]:https://beyondgrep.com/install/
